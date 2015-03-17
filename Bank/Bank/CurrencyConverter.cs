@@ -17,10 +17,10 @@ namespace Bank
         public static double Convert(Currency from, Currency to, double amount)
         {
             if (Prices.ContainsKey(from)
-              && Prices.ContainsKey(to))
+              && Prices.ContainsKey(to)
+              && Prices[to] != null)
             {
-                double fromMianCurrencyValue = Prices[from] * amount;
-
+                double fromMianCurrencyValue = Prices[from] * amount;        
                 return fromMianCurrencyValue / Prices[to];
             }
 

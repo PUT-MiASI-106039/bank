@@ -16,14 +16,13 @@ namespace Bank.Tests
             CurrencyConverter.Prices[Currency.PLN] = 1;
             CurrencyConverter.Prices[Currency.USD] = 3.89;
 
-            for (int i = 0; i < 100; i++)
+            for (double i = -100; i < 100; i += 0.001)
             {
-                var value = CurrencyConverter.Convert(Currency.PLN, Currency.USD, i);
+                double actual = CurrencyConverter.Convert(Currency.PLN, Currency.USD, i);
+                double expected = i / 3.89;
 
-                Assert.Equals(value, i * 3.89);
+                Assert.AreEqual(expected, actual);
             }
-
-            //Assert.Fail();
         }
     }
 }
