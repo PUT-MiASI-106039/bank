@@ -15,5 +15,7 @@ namespace Bank
             bankList = new List<Bank>();
         }
 
+        public void GetTransfers(IEnumerable<Operation>)
+
     }
 }

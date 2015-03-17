@@ -8,5 +8,8 @@ namespace Bank
 {
     public class History
     {
+        public List<Operation> Operations = new List<Operation>();
+
+
     }
 }
