@@ -12,5 +12,11 @@ namespace Bank
         public string Name { get; set; }
 
         public List<Account> Accounts { get; set; }
+
+        public Person()
+        {
+            Accounts = new List<Account>();
+        }
+
     }
 }
