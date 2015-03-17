@@ -15,7 +15,14 @@ namespace Bank
             bankList = new List<Bank>();
         }
 
-        public void GetTransfers(IEnumerable<Operation>)
+        public void ReceiveTransfers(IEnumerable<Operation> operations)
+        {
+            //TODO:
+        }
 
+        public void SendTransfers(IEnumerable<Operation> operations)
+        {
+            //TOOD:
+        }
     }
 }

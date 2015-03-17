@@ -8,8 +8,16 @@ namespace Bank
 {
     public class History
     {
-        public List<Operation> Operations = new List<Operation>();
+        private List<Operation> _history = new List<Operation>();
 
+        public void AddOperation(Operation o)
+        {
+            _history.Add(o);
+        }
 
+        public IEnumerable<Operation> GetHistory()
+        {
+            return _history.OrderBy(o => o.DateTime);
+        }
     }
 }
