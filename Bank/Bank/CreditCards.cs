@@ -28,18 +28,15 @@ namespace Bank
         public CreditCards(Account account)
         {
             this.account = account;
-        }
-
-        public void Income(double amount)
-        {
-
-            account.State += amount;
+            this.Limit = 0.0;
         }
 
         public void Excome(double amount)
         {
-
-            account.State -= amount;
+            if (amount <= Limit)
+            {
+                account.State -= amount;
+            }
         }
 
     }

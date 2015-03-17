@@ -24,6 +24,11 @@ namespace Bank
             }
         }
 
+        public Account()
+        {
+            this.State = 0.0;
+        }
+
         public void Income(double amount)
         {
             //TODO: implemetacja
