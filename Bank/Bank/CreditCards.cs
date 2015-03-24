@@ -8,10 +8,9 @@ namespace Bank
 {
     public class CreditCards
     {
+        private Account _account;
+
         private double _limit;
-
-        private Account account;
-
         public double Limit
         {
             get
@@ -21,13 +20,16 @@ namespace Bank
 
             set
             {
-                this._limit = value;
+                if (_limit != value)
+                {
+                    this._limit = value;
+                }
             }
         }
 
         public CreditCards(Account account)
         {
-            this.account = account;
+            this._account = account;
             this.Limit = 0.0;
         }
 
@@ -35,7 +37,7 @@ namespace Bank
         {
             if (amount <= Limit)
             {
-                account.State -= amount;
+                this._account.Excome(amount);
             }
         }
 

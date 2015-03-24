@@ -10,16 +10,14 @@ namespace Bank
     {
         public List<Account> Accounts { get; set; }
 
-        public List<Person> Clients 
-        { 
-            get
+        public List<Person> GetClients()
+        {
+            if (Accounts != null)
             {
                 return Accounts.Select(a => a.Owner).Distinct().ToList();
             }
 
-            private set
-            {
-            }
+            return new List<Person>();
         }
     }
 }

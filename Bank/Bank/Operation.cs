@@ -12,7 +12,6 @@ namespace Bank
         {
             if (amount > 0)
             {
-
                 source.State -= amount;
                 destiny.State += amount;
             }
@@ -72,9 +71,9 @@ namespace Bank
 
         public Operation(Account source, Account destiny)
         {
-            _dateTime = DateTime.Now;
-            this._source = source;
-            this._destiny = destiny;
+            this.DateTime = DateTime.Now;
+            this.Source = source;
+            this.Destiny = destiny;
         }
 
     }

@@ -8,17 +8,14 @@ namespace Bank
 {
     public static class CurrencyConverter
     {
-        //public static Currency MainCurrency = Currency.PLN;
+        public static readonly Currency MainCurrency = Currency.PLN;
 
         public static Dictionary<Currency, double> Prices = new Dictionary<Currency, double>();
-
-        //public static Dictionary<Currency, double> SellPrices = new Dictionary<Currency, double>();
 
         public static double Convert(Currency from, Currency to, double amount)
         {
             if (Prices.ContainsKey(from)
-              && Prices.ContainsKey(to)
-              && Prices[to] != null)
+              && Prices.ContainsKey(to))
             {
                 double fromMianCurrencyValue = Prices[from] * amount;        
                 return fromMianCurrencyValue / Prices[to];
