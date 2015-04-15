@@ -43,13 +43,19 @@
     <Compile Include="CreditCards.cs" />
     <Compile Include="Currency.cs" />
     <Compile Include="CurrencyConverter.cs" />
-    <Compile Include="History.cs" />
+    <Compile Include="History\Abstract\HistoryAbstract.cs" />
+    <Compile Include="History\Abstract\HistoryOptionAnstract.cs" />
+    <Compile Include="History\Basic\HistoryBasic.cs" />
+    <Compile Include="History\Options\GroupViaAccount.cs" />
+    <Compile Include="History\Options\MonthGroup.cs" />
+    <Compile Include="History\Options\OnlyRecognition.cs" />
     <Compile Include="KIR.cs" />
     <Compile Include="Operation.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Account.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

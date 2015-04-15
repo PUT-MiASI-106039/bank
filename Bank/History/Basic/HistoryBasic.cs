@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bank.History.Abstract;
 
-namespace Bank
+namespace Bank.History.Basic
 {
-    public class History
+    public class HistoryBasic : HistoryAbstract
     {
         private List<Operation> _history = new List<Operation>();
 
@@ -15,9 +16,9 @@ namespace Bank
             _history.Add(o);
         }
 
-        public IEnumerable<Operation> GetHistory()
+        public override void getHistory()
         {
-            return _history.OrderBy(o => o.DateTime);
+            Console.WriteLine("Wyświetlana jest pełna historia");
         }
     }
 }
