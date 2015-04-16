@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    public class Account
+    public abstract class Account : IAccountVisitable<string>
     {
         private double _state;
         public double State
@@ -59,5 +59,7 @@ namespace Bank
                 }
             }
         }
+
+        public abstract string Accept(IAccountVisitor<string> visitor);
     }
 }
