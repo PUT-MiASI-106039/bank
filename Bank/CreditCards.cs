@@ -10,8 +10,8 @@ namespace Bank
     {
         private Account _account;
 
-        private double _limit;
-        public double Limit
+        private int _limit;
+        public int Limit
         {
             get
             {
@@ -30,10 +30,10 @@ namespace Bank
         public CreditCards(Account account)
         {
             this._account = account;
-            this.Limit = 0.0;
+            this.Limit = 0;
         }
 
-        public void Excome(double amount)
+        public void Excome(int amount)
         {
             if (amount <= Limit)
             {

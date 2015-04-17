@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Bank.History.Options
 {
-    public class OnlyRecognition : HistoryOptionAnstract
+    public class OnlyRecognition : HistoryOptionAbstract
     {
-        public override void getHistory()
+        public override void GetHistory()
         {
             Console.WriteLine("Tylko uznania");
         }

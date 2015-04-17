@@ -8,14 +8,13 @@ namespace Bank
 {
     public class Operation
     {
-        public static void Transfer(Account source, Account destiny, double amount)
+        public static void Transfer(Account source, Account destiny, int amount)
         {
             if (amount > 0)
             {
                 source.State -= amount;
                 destiny.State += amount;
             }
-
         }
 
         private Account _source;

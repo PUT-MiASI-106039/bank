@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Bank.History.Options
 {
-    public class GroupViaAccount : HistoryOptionAnstract
+    public class GroupViaAccount : HistoryOptionAbstract
     {
-        public override void getHistory()
+        public override void GetHistory()
         {
             Console.WriteLine("Grupowanie po kontach");
         }

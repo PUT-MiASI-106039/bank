@@ -16,7 +16,7 @@ namespace Bank.History.Basic
             _history.Add(o);
         }
 
-        public override void getHistory()
+        public override void GetHistory()
         {
             Console.WriteLine("Wyświetlana jest pełna historia");
         }

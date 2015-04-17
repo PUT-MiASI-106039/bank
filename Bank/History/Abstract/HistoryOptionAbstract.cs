@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank.History.Abstract
 {
-    public abstract class HistoryOptionAnstract : HistoryAbstract
+    public abstract class HistoryOptionAbstract : HistoryAbstract
     {
     }
 }

@@ -8,8 +8,8 @@ namespace Bank
 {
     public abstract class Account : IAccountVisitable<string>
     {
-        private double _state;
-        public double State
+        private int _state;
+        public int State
         {
             get
             {
@@ -26,17 +26,17 @@ namespace Bank
 
         public Account()
         {
-            this.State = 0.0;
+            this.State = 0;
         }
 
-        public void Income(double amount)
+        public void Income(int amount)
         {
             //TODO: implemetacja
 
             State += amount;
         }
 
-        public void Excome(double amount)
+        public void Excome(int amount)
         {
             //TODO: implementacjas
 
