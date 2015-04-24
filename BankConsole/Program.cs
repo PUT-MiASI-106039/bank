@@ -23,8 +23,8 @@ namespace BankConsole
             //Visitor
             List<Account> accounts = new List<Account>()
             {
-                new AccountVIP() { State = 15 },
-                new AccountRegular() { State = 16 }
+                new AccountVIP(kernel.Get<IPerson>()) { State = 15 },
+                new AccountRegular(kernel.Get<IPerson>()) { State = 16 }
             };
 
             var visitor = new AccountInfoGeneratorVisitor();

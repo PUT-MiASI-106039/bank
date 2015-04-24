@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,7 +46,7 @@
     <Compile Include="AccountRegular.cs" />
     <Compile Include="AccountVIP.cs" />
     <Compile Include="Bank.cs" />
-    <Compile Include="CreditCards.cs" />
+    <Compile Include="CreditCard.cs" />
     <Compile Include="Currency.cs" />
     <Compile Include="CurrencyConverter.cs" />
     <Compile Include="Filters\OperationAmountHandler.cs" />
@@ -55,15 +58,21 @@
     <Compile Include="History\Options\GroupViaAccount.cs" />
     <Compile Include="History\Options\MonthGroup.cs" />
     <Compile Include="History\Options\OnlyRecognition.cs" />
+    <Compile Include="Interfaces\IAccount.cs" />
     <Compile Include="Interfaces\IAccountVisitor.cs" />
     <Compile Include="Interfaces\IAccountVisitable.cs" />
+    <Compile Include="Interfaces\ICurrencyConverter.cs" />
+    <Compile Include="Interfaces\IMediator.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="KIR.cs" />
     <Compile Include="Operation.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Account.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

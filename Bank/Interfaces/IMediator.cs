@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank
+namespace Bank.Interfaces
 {
-    public interface ICurrencyConverter
+    public interface IMediator
     {
-        int Convert(Currency from, Currency to, int amount);
+        void SendMoney(String id, int amount);
     }
 }

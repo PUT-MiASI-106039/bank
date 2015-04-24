@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,23 +7,32 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    public class KIR
+    public class KIR : IMediator
     {
         public List<Bank> bankList;
+
+        private Dictionary<String, Bank> bankDictionary = new Dictionary<String, Bank>();
+
 
         public KIR()
         {
             bankList = new List<Bank>();
         }
 
-        public void ReceiveTransfers(IEnumerable<Operation> operations)
+        #region Mediator Pattern
+
+        public void AddBank(Bank k)
         {
-            //TODO:
+            k.RegisterMediator(this);
+            bankDictionary.Add(k.getId(), k);
         }
 
-        public void SendTransfers(IEnumerable<Operation> operations)
+        public void SendMoney(String id, int amount)
         {
-            //TOOD:
+            bankDictionary[id].ReciveMoeny(amount);
         }
+
+        #endregion
+
     }
 }

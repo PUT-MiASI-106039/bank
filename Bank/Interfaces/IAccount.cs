@@ -8,8 +8,8 @@ namespace Bank
 {
     public interface IAccount
     {
-        public void Income(int amount);
+        void Income(int amount);
 
-        public void Excome(int amount);
+        void Excome(int amount);
     }
 }
