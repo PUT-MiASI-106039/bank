@@ -16,7 +16,7 @@ namespace Bank.Tests
             Account account = new Account();
             account.State = 500.0;
 
-            CreditCards creditCard = new CreditCards(account);
+            CreditCard creditCard = new CreditCard(account);
 
             creditCard.Limit = 41.00;
             creditCard.Excome(21.00);

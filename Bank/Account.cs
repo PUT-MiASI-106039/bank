@@ -24,8 +24,9 @@ namespace Bank
             }
         }
 
-        public Account()
+        public Account(IPerson owner)
         {
+            this.Owner = owner;
             this.State = 0;
         }
 
@@ -43,8 +44,8 @@ namespace Bank
             State -= amount;
         }
 
-        private Person _owner;
-        public Person Owner
+        private IPerson _owner;
+        public IPerson Owner
         {
             get
             {

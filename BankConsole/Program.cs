@@ -1,4 +1,5 @@
 ﻿using Bank;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,14 @@ namespace BankConsole
     {
         static void Main(string[] args)
         {
+            IKernel kernel = new StandardKernel();
+            kernel.Bind<ICurrencyConverter>().To<CurrencyConverter>();
+            kernel.Bind<IPerson>().To<Person>();
+            kernel.Bind<IAccount>().To<AccountVIP>();
+
+            var bank = new Bank.Bank(kernel.Get<ICurrencyConverter>());
+            var card = new CreditCard(kernel.Get<IAccount>());
+
             //Visitor
             List<Account> accounts = new List<Account>()
             {

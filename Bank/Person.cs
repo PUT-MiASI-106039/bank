@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    public class Person
+    public class Person : IPerson
     {
         public readonly Guid Id = new Guid();
 

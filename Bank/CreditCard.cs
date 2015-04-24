@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    public class CreditCards
+    public class CreditCard
     {
-        private Account _account;
+        private IAccount _account;
 
         private int _limit;
         public int Limit
@@ -27,7 +27,7 @@ namespace Bank
             }
         }
 
-        public CreditCards(Account account)
+        public CreditCard(IAccount account)
         {
             this._account = account;
             this.Limit = 0;

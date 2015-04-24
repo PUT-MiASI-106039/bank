@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    public class AccountRegular : Account
+    public class AccountRegular : Account, IAccount
     {
         public override string Accept(IAccountVisitor<string> visitor)
         {
