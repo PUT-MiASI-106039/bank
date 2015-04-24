@@ -57,6 +57,7 @@
     <Compile Include="History\Options\OnlyRecognition.cs" />
     <Compile Include="Interfaces\IAccountVisitor.cs" />
     <Compile Include="Interfaces\IAccountVisitable.cs" />
+    <Compile Include="Interfaces\IMediator.cs" />
     <Compile Include="KIR.cs" />
     <Compile Include="Operation.cs" />
     <Compile Include="Person.cs" />
