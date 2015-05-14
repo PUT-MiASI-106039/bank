@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Bank
+namespace Bank.Filters
 {
     public class OperationAmountHandler : OperationHandler
     {
-        private readonly int maxAmount = 20000;// 20 000
+        private readonly int _maxAmount = 20000;// 20 000
 
         public override void HandleRequest(object request)
         {
@@ -12,10 +12,10 @@ namespace Bank
 
             if (amount >  20 * 1000)
             {
-                Console.WriteLine("OperationAmountHandler amount is more than {0}", maxAmount);
+                Console.WriteLine("OperationAmountHandler amount is more than {0}", _maxAmount);
             }
 
-            _successor.HandleRequest(request);
+            Successor.HandleRequest(request);
         }
     }
 }

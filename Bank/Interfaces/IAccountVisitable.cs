@@ -1,6 +1,4 @@
-﻿using Bank.Interfaces;
-
-namespace Bank
+﻿namespace Bank.Interfaces
 {
     public interface IAccountVisitable<T>
     {

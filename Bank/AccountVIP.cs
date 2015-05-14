@@ -2,9 +2,9 @@
 
 namespace Bank
 {
-    public class AccountVIP : Account, IAccount
+    public class AccountVip : Account, IAccount
     {
-        public AccountVIP(IPerson owner)
+        public AccountVip(IPerson owner)
             : base(owner)
         {
                 

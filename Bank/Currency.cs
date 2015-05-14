@@ -2,10 +2,10 @@
 {
     public enum Currency
     {
-        PLN = 0,
-        USD = 1,
-        EUR = 2,
+        Pln = 0,
+        Usd = 1,
+        Eur = 2,
 
-        BTC = 666,
+        Btc = 666,
     }
 }

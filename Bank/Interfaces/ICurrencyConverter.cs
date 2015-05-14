@@ -1,4 +1,4 @@
-﻿namespace Bank
+﻿namespace Bank.Interfaces
 {
     public interface ICurrencyConverter
     {

@@ -8,19 +8,17 @@ namespace Bank
     public class Bank
     {
         private IMediator _mediator;
-        private String id;
-        private ICurrencyConverter _converter;
+        private String _id;
 
         public Bank(ICurrencyConverter converter)
         {
-            _converter = converter;
         }
 
         public List<Account> Accounts { get; set; }
 
         public Bank(String id) { 
             
-            this.id = id; 
+            _id = id; 
         }
 
         public List<IPerson> GetClients()
@@ -36,17 +34,17 @@ namespace Bank
         #region Mediator pattern
 
         public void RegisterMediator(IMediator mediator) { _mediator = mediator; }
-        public String getId() { return id; }
+        public String GetId() { return _id; }
 
         public void SendMoney(String id, int amount)
         {
-            Console.WriteLine("Przesyłanie pieniędzy od " + this.id + " do " + id + ": " + amount);
+            Console.WriteLine("Przesyłanie pieniędzy od {0} do {1}: {2}", _id, id, amount);
             _mediator.SendMoney(id, amount); // Rzeczywista komunikacja odbywa się za pośrednictwem mediatora!!!
         }
 
         public void ReciveMoeny(int amount)
         {
-            Console.WriteLine("Pieniądze odebranane przez " + id + ": " + amount);
+            Console.WriteLine("Pieniądze odebranane przez " + _id + ": " + amount);
         }
 
         #endregion

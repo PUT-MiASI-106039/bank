@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using Bank.Interfaces;
 
 namespace Bank
 {
     public class CurrencyConverter : ICurrencyConverter
     {
-        public static readonly Currency MainCurrency = Currency.PLN;
+        public static readonly Currency MainCurrency = Currency.Pln;
 
         public static Dictionary<Currency, int> Prices = new Dictionary<Currency, int>();
 

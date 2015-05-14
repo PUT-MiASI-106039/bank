@@ -19,7 +19,7 @@ namespace Bank
                                  "State: {0}" + Environment.NewLine, account.State);
         }
 
-        public string Visit(AccountVIP account)
+        public string Visit(AccountVip account)
         {
             return string.Format("Type: VIP" + Environment.NewLine +
                                  "State: {0}" + Environment.NewLine, account.State);

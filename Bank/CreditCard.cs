@@ -1,4 +1,6 @@
-﻿namespace Bank
+﻿using Bank.Interfaces;
+
+namespace Bank
 {
     public class CreditCard
     {

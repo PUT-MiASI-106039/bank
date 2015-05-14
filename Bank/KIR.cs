@@ -4,16 +4,16 @@ using Bank.Interfaces;
 
 namespace Bank
 {
-    public class KIR : IMediator
+    public class Kir : IMediator
     {
-        public List<Bank> bankList;
+        public List<Bank> BankList;
 
-        private Dictionary<String, Bank> bankDictionary = new Dictionary<String, Bank>();
+        private Dictionary<String, Bank> _bankDictionary = new Dictionary<String, Bank>();
 
 
-        public KIR()
+        public Kir()
         {
-            bankList = new List<Bank>();
+            BankList = new List<Bank>();
         }
 
         #region Mediator Pattern
@@ -21,12 +21,12 @@ namespace Bank
         public void AddBank(Bank k)
         {
             k.RegisterMediator(this);
-            bankDictionary.Add(k.getId(), k);
+            _bankDictionary.Add(k.GetId(), k);
         }
 
         public void SendMoney(String id, int amount)
         {
-            bankDictionary[id].ReciveMoeny(amount);
+            _bankDictionary[id].ReciveMoeny(amount);
         }
 
         #endregion

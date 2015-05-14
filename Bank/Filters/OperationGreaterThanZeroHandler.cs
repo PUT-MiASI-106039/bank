@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bank
+namespace Bank.Filters
 {
     public class OperationGreaterThanZeroHandler : OperationHandler
     {
@@ -13,8 +13,8 @@ namespace Bank
                 Console.WriteLine("OperationGreaterThanZeroHandler: Amount is <= 0");
             }
 
-            if(_successor != null)
-                _successor.HandleRequest(request);
+            if(Successor != null)
+                Successor.HandleRequest(request);
         }
     }
 }

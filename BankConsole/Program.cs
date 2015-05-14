@@ -1,21 +1,20 @@
-﻿using Bank;
-using Ninject;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Bank;
+using Bank.Filters;
+using Bank.Interfaces;
+using Ninject;
 
 namespace BankConsole
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             IKernel kernel = new StandardKernel();
             kernel.Bind<ICurrencyConverter>().To<CurrencyConverter>();
             kernel.Bind<IPerson>().To<Person>();
-            kernel.Bind<IAccount>().To<AccountVIP>();
+            kernel.Bind<IAccount>().To<AccountVip>();
 
             var bank = new Bank.Bank(kernel.Get<ICurrencyConverter>());
             var card = new CreditCard(kernel.Get<IAccount>());
@@ -23,7 +22,7 @@ namespace BankConsole
             //Visitor
             List<Account> accounts = new List<Account>()
             {
-                new AccountVIP(kernel.Get<IPerson>()) { State = 15 },
+                new AccountVip(kernel.Get<IPerson>()) { State = 15 },
                 new AccountRegular(kernel.Get<IPerson>()) { State = 16 }
             };
 

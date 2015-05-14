@@ -1,12 +1,12 @@
-﻿namespace Bank
+﻿namespace Bank.Filters
 {
     public abstract class OperationHandler
     {
-        protected OperationHandler _successor;
+        protected OperationHandler Successor;
 
         public void SetSuccessor(OperationHandler successor)
         {
-            _successor = successor;
+            Successor = successor;
         }
 
         public abstract void HandleRequest(object request);
