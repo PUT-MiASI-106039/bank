@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bank
 {
@@ -70,9 +66,9 @@ namespace Bank
 
         public Operation(Account source, Account destiny)
         {
-            this.DateTime = DateTime.Now;
-            this.Source = source;
-            this.Destiny = destiny;
+            DateTime = DateTime.Now;
+            Source = source;
+            Destiny = destiny;
         }
 
     }

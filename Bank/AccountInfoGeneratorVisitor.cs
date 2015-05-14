@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Bank.Interfaces;
 
 namespace Bank
 {
@@ -10,14 +9,7 @@ namespace Bank
     {
         public string GetInfos(IEnumerable<Account> accounts)
         {
-            string result = string.Empty;
-
-            foreach (var account in accounts)
-            {
-                result += account.Accept(this);
-            }
-
-            return result;
+            return accounts.Aggregate(string.Empty, (current, account) => current + account.Accept(this));
         }
 
 

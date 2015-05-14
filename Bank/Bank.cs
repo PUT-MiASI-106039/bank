@@ -1,21 +1,19 @@
-﻿using Bank.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Bank.Interfaces;
 
 namespace Bank
 {
     public class Bank
     {
-        private IMediator mediator;
+        private IMediator _mediator;
         private String id;
         private ICurrencyConverter _converter;
 
         public Bank(ICurrencyConverter converter)
         {
-            this._converter = converter;
+            _converter = converter;
         }
 
         public List<Account> Accounts { get; set; }
@@ -37,13 +35,13 @@ namespace Bank
 
         #region Mediator pattern
 
-        public void RegisterMediator(IMediator mediator) { this.mediator = mediator; }
+        public void RegisterMediator(IMediator mediator) { _mediator = mediator; }
         public String getId() { return id; }
 
         public void SendMoney(String id, int amount)
         {
             Console.WriteLine("Przesyłanie pieniędzy od " + this.id + " do " + id + ": " + amount);
-            mediator.SendMoney(id, amount); // Rzeczywista komunikacja odbywa się za pośrednictwem mediatora!!!
+            _mediator.SendMoney(id, amount); // Rzeczywista komunikacja odbywa się za pośrednictwem mediatora!!!
         }
 
         public void ReciveMoeny(int amount)

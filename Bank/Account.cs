@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bank.Interfaces;
 
 namespace Bank
 {
     public abstract class Account : IAccountVisitable<string>
     {
-        private int _state;
-        public int State
+        private double _state;
+        public double State
         {
             get
             {
@@ -26,8 +22,8 @@ namespace Bank
 
         public Account(IPerson owner)
         {
-            this.Owner = owner;
-            this.State = 0;
+            Owner = owner;
+            State = 0;
         }
 
         public void Income(int amount)
